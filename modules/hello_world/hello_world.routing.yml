@@ -1,0 +1,14 @@
+hello_world.index:
+  path: '/helloworld'
+  defaults:
+    _controller: 'Drupal\hello_world\Controller\HelloWorldController::index'
+    _title: 'Hello World'
+  requirements:
+    _permission: 'access content'
+hello_world.test:
+  path: '/hello-world'
+  defaults:
+    _controller: 'Drupal\hello_world\Controller\HelloWorldController::test'
+    _title: 'Hello World 2'
+  requirements:
+    _permission: 'access content'
