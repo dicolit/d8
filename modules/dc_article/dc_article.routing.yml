@@ -1,0 +1,24 @@
+dc_article.index:
+  path: '/dc-article'
+  defaults:
+    _controller: 'Drupal\dc_article\Controller\DcArticleController::index'
+    _title: 'Articles'
+  requirements:
+    _permission: 'access content'
+
+dc_article.detail:
+  path: '/dc-article/{article_id}'
+  defaults:
+    _controller: 'Drupal\dc_article\Controller\DcArticleController::detail'
+    _title: 'Article Detail'
+  requirements:
+    _permission: 'access content'
+    article_id: \d+
+
+dc_article.category:
+  path: '/dc-category'
+  defaults:
+    _controller: 'Drupal\dc_article\Controller\DcArticleController::categoryIndex'
+    _title: 'Category Category'
+  requirements:
+    _permission: 'access content'

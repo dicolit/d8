@@ -91,3 +91,11 @@ user:
   css:
     component:
       css/components/user.css: { weight: -10 }
+
+dc_article.article_page:
+  version: VERSION
+  css:
+    theme:
+      css/article_page.css: {}
+  js:
+    js/article_page.js: {}

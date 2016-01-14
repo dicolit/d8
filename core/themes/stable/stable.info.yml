@@ -234,6 +234,13 @@ libraries-override:
         css/views_ui.admin.theme.css: css/views_ui/views_ui.admin.theme.css
         css/views_ui.contextual.css: css/views_ui/views_ui.contextual.css
 
+  dc_article/dc_article.article_page:
+    css:
+      theme:
+        css/article_page.css: css/article_page/article_page.css
+    js:
+      js/article_page.js: js/article_page/article_page.js
+
 # Information added by Drupal.org packaging script on 2015-12-02
 version: '8.0.1'
 core: '8.x'

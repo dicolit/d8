@@ -1,0 +1,16 @@
+<?php
+
+
+/**
+ * Implements hook_theme().
+ */
+function dc_article_theme() {
+  return array(
+    'article_page' => array(
+      'variables' => array('articles' => array(),'articles_pager' => array()),
+    ),
+    'article_detail_page' => array(
+      'variables' => array('article_data' => array()),
+    ),
+  );
+}

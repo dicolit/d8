@@ -1,0 +1,10 @@
+dc_article.article_page:
+  version: VERSION
+  css:
+    theme:
+      css/article_page.css: {}
+  js:
+    js/article_page.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

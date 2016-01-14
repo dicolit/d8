@@ -10,10 +10,18 @@ use Drupal\Core\Controller\ControllerBase;
 
 class HelloWorldController extends ControllerBase {
   public function index() {
-    return array(
+
+    $form = array(
       '#type' => 'markup',
       '#markup' => t('Hello world'),
     );
+
+    $form['#attached']['js'][] = array(
+      'type' => 'file',
+      'data' => 'js/hello_world_page.js',
+    );
+
+    return $form;
   }
 
   public function test() {

@@ -1,0 +1,6 @@
+name: Article
+description: Article module.
+package: DICOL
+type: module
+version: 1.0
+core: 8.x

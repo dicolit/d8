@@ -1,0 +1,8 @@
+drupal.content_types:
+  version: VERSION
+  js:
+    content_types.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupal.form
