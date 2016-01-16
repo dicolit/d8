@@ -11,16 +11,16 @@ use Drupal\Core\Controller\ControllerBase;
 class DcArticleController extends ControllerBase {
   public function index() {
     $articles = array();
-    for($i=1;$i<11;$i++) {
+    for($i=11;$i<21;$i++) {
       $tmp = new \stdClass();
-      $tmp->title = 'Title '.$i;
+      $tmp->title = 'Title 1 '.$i;
       $articles[] = $tmp;
     }
 
     $article_pager = array();
 
     $build = array(
-      '#title'=>'AAAA',
+      '#title'=>'Test title',
       '#theme' => 'article_page',
       '#articles' => $articles,
       '#article_pager' => $article_pager,

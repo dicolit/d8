@@ -1,0 +1,196 @@
+{#
+/**
+ * @file
+ * Bartik's theme implementation to display a single page.
+ *
+ * The doctype, html, head and body tags are not in this template. Instead they
+ * can be found in the html.html.twig template normally located in the
+ * core/modules/system directory.
+ *
+ * Available variables:
+ *
+ * General utility variables:
+ * - base_path: The base URL path of the Drupal installation. Will usually be
+ *   "/" unless you have installed Drupal in a sub-directory.
+ * - is_front: A flag indicating if the current page is the front page.
+ * - logged_in: A flag indicating if the user is registered and signed in.
+ * - is_admin: A flag indicating if the user has permission to access
+ *   administration pages.
+ *
+ * Site identity:
+ * - front_page: The URL of the front page. Use this instead of base_path when
+ *   linking to the front page. This includes the language domain or prefix.
+ *
+ * Page content (in order of occurrence in the default page.html.twig):
+ * - node: Fully loaded node, if there is an automatically-loaded node
+ *   associated with the page and the node ID is the second argument in the
+ *   page's path (e.g. node/12345 and node/12345/revisions, but not
+ *   comment/reply/12345).
+ *
+ * Regions:
+ * - page.header: Items for the header region.
+ * - page.highlighted: Items for the highlighted region.
+ * - page.primary_menu: Items for the primary menu region.
+ * - page.secondary_menu: Items for the secondary menu region.
+ * - page.featured_top: Items for the featured top region.
+ * - page.content: The main content of the current page.
+ * - page.sidebar_first: Items for the first sidebar.
+ * - page.sidebar_second: Items for the second sidebar.
+ * - page.featured_bottom_first: Items for the first featured bottom region.
+ * - page.featured_bottom_second: Items for the second featured bottom region.
+ * - page.featured_bottom_third: Items for the third featured bottom region.
+ * - page.footer_first: Items for the first footer column.
+ * - page.footer_second: Items for the second footer column.
+ * - page.footer_third: Items for the third footer column.
+ * - page.footer_fourth: Items for the fourth footer column.
+ * - page.footer_fifth: Items for the fifth footer column.
+ * - page.breadcrumb: Items for the breadcrumb region.
+ *
+ * @see template_preprocess_page()
+ * @see html.html.twig
+ */
+#}
+
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- The mobile navbar-toggle button can be safely removed since you do not need it in a non-responsive implementation -->
+      <a class="navbar-brand" href="#">Project name</a>
+    </div>
+    <!-- Note that the .navbar-collapse and .collapse classes have been removed from the #navbar -->
+    <div id="navbar">
+      <!--
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li class="dropdown-header">Nav header</li>
+            <li><a href="#">Separated link</a></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>-->
+
+      {{ page.primary_menu }}
+
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <!--<ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+      </ul>-->
+      {{ page.secondary_menu }}
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
+
+<div class="container">
+
+  <div class="page-header">
+    <h1>Non-responsive Bootstrap</h1>
+    <p class="lead">Disable the responsiveness of Bootstrap by fixing the width of the container and using the first grid system tier. <a href="http://getbootstrap.com/getting-started/#disable-responsive">Read the documentation</a> for more information.</p>
+  </div>
+
+  <h3>What changes</h3>
+  <p>Note the lack of the <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</code>, which disables the zooming aspect of sites in mobile devices. In addition, we reset our container's width and changed the navbar to prevent collapsing, and are basically good to go.</p>
+
+  <h3>Regarding navbars</h3>
+  <p>As a heads up, the navbar component is rather tricky here in that the styles for displaying it are rather specific and detailed. Overrides to ensure desktop styles display are not as performant or sleek as one would like. Just be aware there may be potential gotchas as you build on top of this example when using the navbar.</p>
+
+  <h3>Browsers, scrolling, and fixed elements</h3>
+  <p>Non-responsive layouts highlight a key drawback to fixed elements. <strong class="text-danger">Any fixed component, such as a fixed navbar, will not be scrollable when the viewport becomes narrower than the page content.</strong> In other words, given the non-responsive container width of 970px and a viewport of 800px, you'll potentially hide 170px of content.</p>
+  <p>There is no way around this as it's default browser behavior. The only solution is a responsive layout or using a non-fixed element.</p>
+
+  <h3>Non-responsive grid system</h3>
+  <div class="row">
+    <div class="col-xs-4">One third</div>
+    <div class="col-xs-4">One third</div>
+    <div class="col-xs-4">One third</div>
+  </div>
+
+</div> <!-- /container -->
+
+
+
+{{ page.header }}
+
+
+{% if page.highlighted %}
+  <div class="highlighted">
+    <aside class="layout-container section clearfix" role="complementary">
+      {{ page.highlighted }}
+    </aside>
+  </div>
+{% endif %}
+
+{% if page.featured_top %}
+  <div class="featured-top">
+    <aside class="featured-top__inner section layout-container clearfix" role="complementary">
+      {{ page.featured_top }}
+    </aside>
+  </div>
+{% endif %}
+
+
+{{ page.breadcrumb }}
+
+
+{{ page.content }}
+
+
+{% if page.sidebar_first %}
+  <div id="sidebar-first" class="column sidebar">
+    <aside class="section" role="complementary">
+      {{ page.sidebar_first }}
+    </aside>
+  </div>
+{% endif %}
+{% if page.sidebar_second %}
+  <div id="sidebar-second" class="column sidebar">
+    <aside class="section" role="complementary">
+      {{ page.sidebar_second }}
+    </aside>
+  </div>
+{% endif %}
+
+
+
+{% if page.featured_bottom_first or page.featured_bottom_second or page.featured_bottom_third %}
+  <div class="featured-bottom">
+    <aside class="layout-container clearfix" role="complementary">
+      {{ page.featured_bottom_first }}
+      {{ page.featured_bottom_second }}
+      {{ page.featured_bottom_third }}
+    </aside>
+  </div>
+{% endif %}
+<footer class="site-footer">
+  <div class="layout-container">
+    {% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %}
+      <div class="site-footer__top clearfix">
+        {{ page.footer_first }}
+        {{ page.footer_second }}
+        {{ page.footer_third }}
+        {{ page.footer_fourth }}
+      </div>
+    {% endif %}
+    {% if page.footer_fifth %}
+      <div class="site-footer__bottom">
+        {{ page.footer_fifth }}
+      </div>
+    {% endif %}
+  </div>
+</footer>

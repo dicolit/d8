@@ -1,0 +1,21 @@
+global-styling:
+  version: VERSION
+  css:
+    base:
+      css/base.css: {}
+    component:
+      css/component.css: {}
+    layout:
+      css/layout.css: {}
+    theme:
+      css/style.css: {}
+      css/bootstrap.min.css: {}
+      css/print.css: { media: print }
+  js:
+    js/bootstrap.min.js: {}
+
+maintenance_page:
+  version: VERSION
+  css:
+    theme:
+      css/maintenance-page.css: {}

@@ -1,0 +1,14 @@
+{% extends "@classy/block/block--system-menu-block.html.twig" %}
+{#
+/**
+ * @file
+ * Bartik's theme implementation for a menu block.
+ *
+ * @ingroup themeable
+ */
+#}
+{% block content %}
+  <div{{ content_attributes.addClass('content') }}>
+    {{ content }}
+  </div>
+{% endblock %}

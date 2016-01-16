@@ -1,0 +1,4 @@
+<?php
+function dc_demo_preprocess_page(&$variables) {
+  $variables['logo'] = FALSE;
+}
